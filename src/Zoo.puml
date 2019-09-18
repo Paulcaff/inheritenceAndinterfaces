@@ -1,0 +1,40 @@
+@startuml
+skinparam classAttributeIconSize 0
+class Zoo{
+
+}
+
+
+skinparam classAttributeIconSize 0
+class Animal{
+-int weight
+-int age
+-String gender
+
++eat()
++sleep()
+}
+
+class Bird{
++fly()
+}
+
+class Fish{
++swim()
+}
+
+class Chicken{
++fly()
+}
+
+class Sparrow {
+}
+
+interface Flyable
+
+Zoo --"0.*" Animal :contains >
+Animal <|-- (Fish,Bird)
+
+Bird <|-- (Chicken,Sparrow)
+Sparrow ..|> Flyable
+@enduml
